@@ -68,9 +68,9 @@
 		</dependency>
 
 		<dependency>
-		    <groupId>br.com.alura.enviadorEmail</groupId>
-		    <artifactId>enviadorEmail</artifactId>
-		    <version>0.0.1-SNAPSHOT</version>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-email</artifactId>
+		    <version>1.4</version>
 		</dependency>
 
 		<dependency>

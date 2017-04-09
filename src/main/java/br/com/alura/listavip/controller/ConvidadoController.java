@@ -7,15 +7,18 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import br.com.alura.enviadorEmail.service.EmailService;
 import br.com.alura.listavip.model.Convidado;
 import br.com.alura.listavip.service.ConvidadoService;
+import br.com.alura.listavip.service.EmailService;
 
 @Controller
 public class ConvidadoController {
 
 	@Autowired
 	private ConvidadoService convidadoService;
+	
+	@Autowired
+	private EmailService emailService;
 	
 	@RequestMapping("/")
 	public String index() {
@@ -35,7 +38,7 @@ public class ConvidadoController {
 	public String salvar(@ModelAttribute Convidado convidado, Model model) {	
 		
 		convidadoService.salvar(convidado);
-		new EmailService().enviar(convidado.getNome(), convidado.getEmail());
+		emailService.enviar(convidado.getNome(), convidado.getEmail());
 				
 		return listaConvidados(model);
 	}
