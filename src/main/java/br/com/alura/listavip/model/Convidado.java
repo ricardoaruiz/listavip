@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity(name = "convidado")
 public class Convidado {
 
@@ -11,10 +13,13 @@ public class Convidado {
     @GeneratedValue
     private Long id;
 
+    @NotBlank(message="O nome é obrigatório.")
     private String nome;
     
+    @NotBlank(message="O email é obrigatório.")
     private String email;
     
+    @NotBlank(message="O telefone é obrigatório.")
     private String telefone;
 
     public Convidado() {
