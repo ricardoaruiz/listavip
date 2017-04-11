@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-	<head>
-	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	    <title>ListaVIP</title>
-	    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-	</head>
-	<body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+
+	<th:block layout:fragment="content">
+	
 		<div id="listaDeConvidados">
 		    <table class="table table-hover">
 		        <thead>
@@ -51,7 +49,6 @@
 		    <button type="submit" class="btn btn-success">Convidar</button>
 		</form>		
 		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="bootstrap/js/bootstrap.min.js"></script>
-	</body>
+	</th:block>
+
 </html>
